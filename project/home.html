@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PhotoShare - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="nav-container">
+            <h1 class="logo">PhotoShare</h1>
+            <div class="nav-actions">
+                <button class="upload-btn" onclick="triggerFileUpload()">
+                    <span>+</span> Upload Photo
+                </button>
+                <div class="user-menu">
+                    <span id="userName">Welcome!</span>
+                    <button class="logout-btn" onclick="logout()">Logout</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="upload-section">
+            <input type="file" id="photoInput" accept="image/*" multiple style="display: none;">
+            <div class="upload-area" onclick="triggerFileUpload()">
+                <div class="upload-icon">📸</div>
+                <h3>Upload Your Photos</h3>
+                <p>Drag and drop or click to select images</p>
+            </div>
+        </div>
+
+        <div class="photos-grid" id="photosGrid">
+            <!-- Photos will be dynamically added here -->
+        </div>
+    </main>
+
+    <!-- Photo Modal -->
+    <div class="modal" id="photoModal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="">
+            <div class="modal-info">
+                <h3 id="modalTitle">Photo Title</h3>
+                <p id="modalDate">Upload Date</p>
+            </div>
+            <div class="modal-nav">
+                <button class="nav-btn prev" onclick="prevPhoto()">❮</button>
+                <button class="nav-btn next" onclick="nextPhoto()">❯</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="home.js"></script>
+</body>
+</html>
